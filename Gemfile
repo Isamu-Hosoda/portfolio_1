@@ -20,7 +20,7 @@ gem 'jbuilder', '~> 2.7'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt','~>3.1.11'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
@@ -56,3 +56,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'dotenv-rails'
+gem 'devise'
+gem 'devise-i18n'
+gem 'devise-i18n-views'
+gem 'rails-i18n'

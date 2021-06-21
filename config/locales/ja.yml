@@ -1,0 +1,5 @@
+ja:
+ activerecord:
+   attributes:
+     user:
+       company: 会社名
