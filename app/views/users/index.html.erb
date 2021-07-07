@@ -1,0 +1,34 @@
+<h3><%= current_user.company %> 社員一覧</h3>
+<%= flash[:notice] %>
+<table class="table">
+  <thead>
+    <tr>
+      <th>社員名</th>
+      <th>保有スキル</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= link_to current_user.name, current_user %></td>
+      <td>
+        <% current_user.tags.each do |t| %>
+          <span class="tag"><%= t.name %></span>
+        <% end %>
+      </td>
+    </tr>
+    <% @users.each do |user| %>
+      <% unless current_user == user %>
+        <tr>
+          <% if current_user.company == user.company %>
+            <td><%= link_to user.name, user %></td>
+            <td>
+              <% user.tags.each do |t| %>
+                <span class="tag"><%= t.name %></span>
+              <% end %>
+            </td>
+          <% end %>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>

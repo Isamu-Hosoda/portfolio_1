@@ -1,0 +1,25 @@
+<h3><%= @user.name %>さんのページ</h3>
+<% if user_signed_in? && current_user != @user %>
+  <table class="table">
+    <tr>
+      <th>保有スキル</th>
+      <td>
+        <% @user.tags.each do |t| %>
+          <span class="tag"><%= t.name %></span>
+        <% end %>
+      </td>
+    </tr>
+  </table>
+<% else %>
+  <%= form_with(model: @user, local: true) do |form| %>
+    <div class="field">
+      <%= form.label :tag_ids, 'タグ' %>
+      <%= form.collection_check_boxes :tag_ids, Tag.all, :id, :name do |b| %>
+          <%= b.check_box + b.label %>
+      <% end %>
+    </div>
+    <div class="actions">
+      <%= form.submit %>
+    </div>
+  <% end %>
+<% end %>
