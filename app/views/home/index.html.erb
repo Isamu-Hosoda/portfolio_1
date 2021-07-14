@@ -2,12 +2,8 @@
   <h4>
     <%= current_user.company %>
     <%= current_user.name %>
-    <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
   </h4>
   <p>ログインしています</p>
-  <p><%= link_to '社員一覧ページ', users_path %></p>
-  <p><%= link_to 'マイページ', user_path(current_user.id) %></p>
-  <p><%= link_to 'プロフィール編集', edit_user_registration_path %></p>
 <% else %>
   <h2> 現在ログインしていません </h2>
   <%= link_to 'ログイン', new_user_session_path, class: 'post' %>

@@ -13,6 +13,9 @@
  *= require_tree .
  *= require_self
  */
+@import "bootstrap";
+@import "navbar";
+
 .tag {
     background-color: #f96781;
     color: #ffffff;
@@ -47,6 +50,7 @@
 }
 table {
     background-color: #c2eeff;  /* 背景色指定 */
+    width: 100%;
 }
 th {
 		padding: 10px;
@@ -54,4 +58,5 @@ th {
 }
 td{
 		padding: 5px 10px;
+		line-height: 30px;
 }
