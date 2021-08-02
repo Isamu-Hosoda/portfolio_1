@@ -7,6 +7,12 @@ import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
+import "chartkick/chart.js"
+import "Chart.min"
+
+require("chartkick")
+require("chart.js")
+require ("Chart.min")
 
 Rails.start()
 Turbolinks.start()

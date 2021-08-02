@@ -17,7 +17,7 @@
 @import "navbar";
 
 .tag {
-    background-color: #f96781;
+    background-color: #136FFF;
     color: #ffffff;
     margin: 15px;
     padding: 5px 5px 5px 10px;
@@ -31,7 +31,7 @@
   content: '';
   width: 0;
   height: 0;
-  border-color: transparent #f96781 transparent transparent;
+  border-color: transparent #136FFF transparent transparent;
   border-style: solid;
   border-width: 13px 15px 13px 0;
 }
@@ -47,10 +47,6 @@
   margin-top: -3px;
   background-color: #fff;
   border-radius: 100%;
-}
-table {
-    background-color: #c2eeff;  /* 背景色指定 */
-    width: 100%;
 }
 th {
 		padding: 10px;
