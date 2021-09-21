@@ -1,0 +1,16 @@
+<h4>プロジェクト編集</h4>
+<%= form_with model: @project, local: true do |f| %>
+  <div>
+    <%= f.text_field :name, autofocus: true, placeholder: "#{@project.name}" %>
+  </div>
+  <div>
+    <%= f.date_select :start_date, { start_year: 1960, end_year: Time.now.year } %>
+  </div>
+  <div>
+    <%= f.date_select :end_date, { start_year: 1960, end_year: Time.now.year } %>
+  </div>
+  <div>
+    <%= f.text_area :caption, placeholder: "#{@project.caption}" %>
+  </div>
+  <%= f.submit "更新する" %>
+<% end %>

@@ -1,0 +1,36 @@
+<h4><%= current_user.company %> 検索結果</h4>
+<%= flash[:notice] %>
+
+<%= search_form_for @q, url: search_users_path do |f| %>
+<%= f.search_field :name_cont %>
+<%= f.submit "検索" %>
+<% end %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>社員名</th>
+      <th>保有スキル</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @results.each do |user| %>
+      <% if current_user.company == user.company %>
+        <tr>
+          <td><%= link_to user.name, user %></td>
+          <td>
+            <% count = 0 %>
+            <% user.tags.each do |t| %>
+              <% if count >= 10 %>
+                <br>
+                <% count = 0 %>
+              <% end %>
+              <span class="tag"><%= t.name %></span>
+              <% count += 1 %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>

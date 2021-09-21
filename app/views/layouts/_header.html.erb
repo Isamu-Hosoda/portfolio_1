@@ -10,12 +10,12 @@
             <%= link_to '社員一覧', users_path %>
           </li>
           <li class="nav-item">
-            <%= link_to 'プロフィール編集', edit_user_registration_path %>
+            <%= link_to 'マイページ', user_path(current_user.id) %>
           </li>
         </ul>
       </div>
       <div class="navbar-item" style="margin-right: 20px;">
-        ログイン中のユーザー：<%= link_to current_user.name, user_path(current_user.id) %>
+        ログイン中のユーザー：<%= current_user.name %>
       </div>
       <div class="navbar-item" style="margin-right: 20px;">
         <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>

@@ -10,9 +10,12 @@ import "channels"
 import "chartkick/chart.js"
 import "Chart.min"
 
+require("@rails/ujs").start()
 require("chartkick")
 require("chart.js")
 require ("Chart.min")
+
+require('jquery')
 
 Rails.start()
 Turbolinks.start()
