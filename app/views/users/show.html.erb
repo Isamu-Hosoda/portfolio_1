@@ -24,27 +24,39 @@
   <% end %>
   <%= link_to 'プロフィール編集', edit_user_registration_path %><br>
   <%= link_to 'プロジェクト作成', new_project_path %><br>
+  <% @number = 1 %>
   <% @career = [] %>
-  <% current_user.projects.each do |project| %>
-    <div class="row">
-      <div class="col-2">
-        <%= project.name %>
+  <div class="accordion" id="accordionExample">
+    <% current_user.projects.each do |project| %>
+      <div class="card">
+        <div class="card-header" id="headingOne">
+          <h5 class="mb-0">
+            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse<%= @number %>" aria-expanded="true" aria-controls="collapseone">
+              <%= project.name %>
+            </button>
+          </h5>
+        </div>
+        <div id="collapse<%= @number %>" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+          <div class="card-body">
+            <%= project.start_date %>〜
+            <% if project.end_date == nil %>
+              <%= Date.current %>
+            <% else %>
+              <%= project.end_date %>
+            <% end %>
+            <%= project.caption %>
+            <%= link_to "編集", edit_project_path(project) %>
+            <%= button_to '削除', project, :method => :delete %>
+          </div>
+        </div>
       </div>
-      <div class="col-2">
-        <%= project.start_date %>
-      </div>
-      <div class="col-2">
-        <%= project.end_date %>
-      </div>
-      <div class="col-2">
-        <%= link_to "編集", edit_project_path(project) %>
-      </div>
-      <div class="col-2">
-        <%= button_to '削除', project, :method => :delete %>
-      </div>
-    </div>
-    <% @career.push([project.name, project.start_date, project.end_date]) %>
-  <% end %>
+      <% if project.end_date == nil %>
+        <% @career.push([project.name, project.start_date, Date.current]) %>
+      <% else %>
+        <% @career.push([project.name, project.start_date, project.end_date]) %>
+      <% end %>
+      <% @number += 1 %>
+    <% end %>
+  </div>
   <%= timeline @career %>
-
 <% end %>

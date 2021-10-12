@@ -7,7 +7,7 @@
     <%= f.date_select :start_date, { start_year: 1960, end_year: Time.now.year, use_month_numbers: true } %>
   </div>
   <div>
-    <%= f.date_select :end_date, { start_year: 1960, end_year: Time.now.year, use_month_numbers: true } %>
+    <%= f.date_select :end_date, { start_year: 1960, end_year: Time.now.year, use_month_numbers: true, include_blank: true } %>
   </div>
   <div>
     <%= f.text_area :caption %>

@@ -11,11 +11,16 @@ import "chartkick/chart.js"
 import "Chart.min"
 
 require("@rails/ujs").start()
+require("turbolinks").start()
+require("@rails/activestorage").start()
+require("channels")
 require("chartkick")
 require("chart.js")
 require ("Chart.min")
-
 require('jquery')
+
+import "bootstrap";
+import "../stylesheets/application";
 
 Rails.start()
 Turbolinks.start()
