@@ -1,0 +1,15 @@
+current directory: /Users/hosoda_isamu/portfolio_1/vendor/bundle/ruby/2.7.0/gems/bootsnap-1.7.5/ext/bootsnap
+/Users/hosoda_isamu/.rbenv/versions/2.7.1/bin/ruby -I /Users/hosoda_isamu/.rbenv/versions/2.7.1/lib/ruby/2.7.0 -r ./siteconf20220116-67305-yztxpl.rb extconf.rb
+creating Makefile
+
+current directory: /Users/hosoda_isamu/portfolio_1/vendor/bundle/ruby/2.7.0/gems/bootsnap-1.7.5/ext/bootsnap
+make "DESTDIR=" clean
+
+current directory: /Users/hosoda_isamu/portfolio_1/vendor/bundle/ruby/2.7.0/gems/bootsnap-1.7.5/ext/bootsnap
+make "DESTDIR="
+compiling bootsnap.c
+linking shared-object bootsnap/bootsnap.bundle
+
+current directory: /Users/hosoda_isamu/portfolio_1/vendor/bundle/ruby/2.7.0/gems/bootsnap-1.7.5/ext/bootsnap
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 bootsnap.bundle ./.gem.20220116-67305-8qoims/bootsnap
